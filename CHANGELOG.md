@@ -14,6 +14,7 @@ The `Unreleased` section name is replaced by the expected version of next releas
 
 ### Changed
 
+- now targets `Microsoft.Azure.Cosmos` v `3.1.1` (instead of `Microsoft.Azure.DocumentDB`[`.Core`] v 2.x) [#144](https://github.com/jet/equinox/pull/144)
 - Updated README.md to refer to `propulsion init` and `propulsion project` (formerly `eqx` `initAux` and `project`) (jet/propulsion#17)[https://github.com/jet/propulsion/pull/17]
 - `eqx project` now uses environment variables `PROPULSION_KAFKA_`* instead of `EQUINOX_`* [#143](https://github.com/jet/equinox/pull/143)
 - `Equinox.Cosmos` now uses `Container` in preference to `Collection`, in alignment with the `Microsoft.Azure.Cosmos` SDK's standardized naming, _and other minor changes, see PR for details_ [#149](https://github.com/jet/equinox/pull/149)
