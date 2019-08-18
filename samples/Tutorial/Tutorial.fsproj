@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Include="Favorites.fsx" />
     <None Include="Counter.fsx" />
+    <None Include="FulfilmentCenter.fsx" />
     <None Include="Todo.fsx" />
     <None Include="Cosmos.fsx" />
   </ItemGroup>
