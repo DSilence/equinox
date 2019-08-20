@@ -259,7 +259,7 @@ type Tests(testOutputHelper) =
             | _ -> None
         // validate that, despite only requesting max 1 item, we only needed one trip (which contained only one item)
         [1,1] =! capture.ChooseCalls queryRoundTripsAndItemCounts
-        verifyRequestChargesMax 6 // 5.84 // WAS 3 // 2.97
+        verifyRequestChargesMax 4 // 3.02 // WAS 3 // 2.97
     }
 
     (* Backward *)
@@ -280,7 +280,7 @@ type Tests(testOutputHelper) =
         verifyCorrectEventsBackward 4L expected res
 
         test <@ [EqxAct.ResponseBackward; EqxAct.QueryBackward] = capture.ExternalCalls @>
-        verifyRequestChargesMax 6 // 5.86 // WAS 3
+        verifyRequestChargesMax 4 // 3.04 // WAS 3
     }
 
     [<AutoData(SkipIfRequestedViaEnvironmentVariable="EQUINOX_INTEGRATION_SKIP_COSMOS")>]
@@ -324,5 +324,5 @@ type Tests(testOutputHelper) =
             | EqxEvent (Equinox.Cosmos.Store.Log.Event.Query (Equinox.Cosmos.Store.Direction.Backward, responses, { count = c })) -> Some (responses,c)
             | _ -> None
         [1,5] =! capture.ChooseCalls queryRoundTripsAndItemCounts
-        verifyRequestChargesMax 6 // 5.86 // WAS 3 // 2.98
+        verifyRequestChargesMax 4 // 3.04 // WAS 3 // 2.98
     }
